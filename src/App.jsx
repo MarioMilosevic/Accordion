@@ -1,22 +1,20 @@
 import { useState } from "react";
 import Question from "./components/Question";
+import Heading from "./components/Heading";
 import questions from "./data/data";
 
 function App() {
-  console.log(questions)
-  const [appQuestions,setAppQuestions] = useState()
-  
+  const [appQuestions, setAppQuestions] = useState(questions);
 
+  console.log(appQuestions);
 
   return (
     <>
-      <main className="border bg-white p-4 rounded-lg shadow-lg">
-        <h1 className="text-center p-4 text-4xl">Questions</h1>
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
+      <main className="border bg-white px-8 py-8 rounded-lg shadow-lg">
+        <Heading/>
+        {appQuestions.map((question) => {
+          return <Question {...question} key={question.id} />;
+        })}
       </main>
     </>
   );
