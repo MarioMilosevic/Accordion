@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+
 const Question = ({ title, info }) => {
   const [clicked, setClicked] = useState(false);
   const [button, setButton] = useState("+");
@@ -7,9 +8,9 @@ const Question = ({ title, info }) => {
     setClicked((prev) => {
       return !prev;
     });
-    setButton((prev) => {
-     
-    });
+    clicked
+      ? setButton((prevButton) => (prevButton = "+"))
+      : setButton((prevButton) => (prevButton = "-"));
   };
 
   return (

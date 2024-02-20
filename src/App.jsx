@@ -6,7 +6,7 @@ import questions from "./data/data";
 function App() {
   const [appQuestions, setAppQuestions] = useState(questions);
 
-  console.log(appQuestions);
+  // console.log(appQuestions);
 
   return (
     <>
