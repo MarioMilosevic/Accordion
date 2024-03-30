@@ -3,14 +3,11 @@ import { useState } from "react";
 
 const Question = ({ title, info }) => {
   const [clicked, setClicked] = useState(false);
-  const [button, setButton] = useState("+");
+
   const buttonHandler = () => {
     setClicked((prev) => {
       return !prev;
     });
-    clicked
-      ? setButton((prevButton) => (prevButton = "+"))
-      : setButton((prevButton) => (prevButton = "-"));
   };
 
   return (
@@ -21,7 +18,7 @@ const Question = ({ title, info }) => {
           onClick={buttonHandler}
           className="rounded-full bg-blue-400 px-2 py-1 text-xl text-white"
         >
-          {button}
+          {clicked ? "-" : "+"}
         </button>
       </div>
       {clicked && <div className="w-full px-4 py-2 text-sm">{info}</div>}

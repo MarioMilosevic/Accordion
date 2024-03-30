@@ -6,12 +6,10 @@ import questions from "./data/data";
 function App() {
   const [appQuestions, setAppQuestions] = useState(questions);
 
-  // console.log(appQuestions);
-
   return (
     <>
       <main className="border bg-white px-8 py-8 rounded-lg shadow-lg">
-        <Heading/>
+        <Heading />
         {appQuestions.map((question) => {
           return <Question {...question} key={question.id} />;
         })}
